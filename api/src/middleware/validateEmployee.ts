@@ -31,13 +31,12 @@ export const validateEmployee = [
     .isString()
     .withMessage("Phone number must be a string"),
   body("officeId")
-    .notEmpty()
-    .withMessage("Office ID is required")
+    .if((_value: any, { req }: any) => req.method === "POST")
     .isUUID()
     .withMessage("Invalid office ID"),
 
   (req: Request, res: Response, next: NextFunction) => {
-    const errors = validationResult(req);
+    const errors = validationResult(req);    
 
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });

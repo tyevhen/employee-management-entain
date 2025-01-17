@@ -24,6 +24,9 @@ model Employee {
   office    Office   @relation(fields: [officeId], references: [id])
   tags      Tag[]    @relation("EmployeeTags")
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+
   @@map("employee")
 }
 
@@ -32,13 +35,19 @@ model Office {
   name        String
   employees   Employee[]
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+
   @@map("office")
 }
 
 model Tag {
   id         String      @id @default(uuid()) @db.Uuid
-  name       String
+  name       String      @unique
   employees  Employee[]  @relation("EmployeeTags")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
 
   @@map("tag")
 }

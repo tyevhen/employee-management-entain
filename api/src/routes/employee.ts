@@ -1,9 +1,15 @@
 import express from "express";
 import { validateEmployee } from "../middleware/validateEmployee";
-import { createEmployee } from "../controllers/employee";
+import {
+  createEmployee,
+  updateEmployee,
+  findAll,
+} from "../controllers/employee";
 
-const employeeRouter = express.Router();
+const router = express.Router();
 
-employeeRouter.post('/', validateEmployee, createEmployee);
+router.post("/", validateEmployee, createEmployee);
+router.put("/:id", validateEmployee, updateEmployee);
+router.get("/", findAll);
 
-export default employeeRouter;
+export { router as employeeRouter };

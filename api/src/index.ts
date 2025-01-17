@@ -1,9 +1,12 @@
 import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
-import employeeRouter from "./routes/employee";
+import * as dotenv from "dotenv";
+
+import { employeeRouter } from "./routes/employee";
+import { tagRouter } from "./routes/tag";
+import { officeRouter } from "./routes/office";
 import config from "./config";
 import runSeed from "./db/seed";
-import * as dotenv from "dotenv";
 
 dotenv.config();
 
@@ -15,6 +18,8 @@ const startServer = async () => {
 
     app.use(bodyParser.json());
     app.use("/employees", employeeRouter);
+    app.use("/tags", tagRouter);
+    app.use("/offices", officeRouter);
 
     app.all("*", (req: Request, res: Response) => {
       res.status(404).json({

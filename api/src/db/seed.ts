@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// TODO: use prisma's default seeding and remove from server startup
+
 const runSeed = async () => {
   console.log("Seeding database...");
 
