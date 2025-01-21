@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Tag, TagCreate } from '../../shared/interfaces';
-import { selectAllTags } from '../../selectors/tags.selector';
+import { selectAllTags } from '../../store/selectors/tags.selector';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';

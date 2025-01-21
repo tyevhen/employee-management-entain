@@ -1,16 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
-import { Employee } from '../shared/interfaces';
+
+import { Employee } from '../../shared/interfaces';
 import {
   loadEmployees,
   setEmployees,
   loadEmployeesFailure,
-  deleteEmployeeSuccess,
+  createEmployeeSuccess,
+  createEmployeeFailure,
   deleteEmployeeFailure,
   updateEmployeeSuccess,
   updateEmployeeFailure,
-  createEmployeeSuccess,
-  createEmployeeFailure,
-} from '../store/employee.actions';
+  deleteEmployeeSuccess,
+} from '../actions';
 
 export interface EmployeeState {
   employees: Employee[];

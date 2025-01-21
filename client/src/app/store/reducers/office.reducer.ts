@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { setOffices, loadOffices, loadOfficesFailure } from '../store';
-import { Office } from '../shared/interfaces';
+import { Office } from '../../shared/interfaces';
+import { loadOffices, setOffices, loadOfficesFailure } from '../actions';
 
 export interface OfficeState {
   offices: Office[];

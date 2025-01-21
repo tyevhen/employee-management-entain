@@ -2,17 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { catchError, EMPTY, Observable, tap } from 'rxjs';
-import {
-  createEmployeeFailure,
-  createEmployeeSuccess,
-  createTagSuccess,
-  deleteTagSuccess,
-  setOffices,
-  setTags,
-  updateEmployeeFailure,
-  updateEmployeeSuccess,
-} from '../store';
+
 import { Employee, EmployeeCreate, Tag, TagCreate } from '../shared/interfaces';
+import { createEmployeeFailure, createEmployeeSuccess, createTagSuccess, deleteTagSuccess, setOffices, setTags, updateEmployeeFailure, updateEmployeeSuccess } from '../store/actions';
 
 @Injectable({
   providedIn: 'root',

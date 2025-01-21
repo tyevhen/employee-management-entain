@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Employee, EmployeeCreate } from '../shared/interfaces';
+import { Employee, EmployeeCreate } from '../../shared/interfaces';
 
 export const loadEmployees = createAction('[Employee] Load Employees');
 export const setEmployees = createAction(

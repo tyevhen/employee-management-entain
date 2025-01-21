@@ -1,6 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
-import { setTags, loadTags, loadTagsFailure, deleteTag, deleteTagSuccess, deleteTagFailure, createTagSuccess } from '../store';
-import { Tag } from '../shared/interfaces';
+import { Tag } from '../../shared/interfaces';
+import {
+  loadTags,
+  setTags,
+  loadTagsFailure,
+  deleteTag,
+  deleteTagSuccess,
+  deleteTagFailure,
+  createTagSuccess,
+} from '../actions';
 
 export interface TagState {
   tags: Tag[];

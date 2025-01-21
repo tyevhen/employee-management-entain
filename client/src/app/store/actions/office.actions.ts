@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Office } from '../shared/interfaces';
+import { Office } from '../../shared/interfaces';
 
 export const setOffices = createAction(
   '[Offices] Set Offices',

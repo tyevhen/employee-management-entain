@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { OfficeState } from '../../reducers/office.reducer';
+import { OfficeState } from '../reducers/office.reducer';
 
 export const selectOfficeState = createFeatureSelector<OfficeState>('offices');
 

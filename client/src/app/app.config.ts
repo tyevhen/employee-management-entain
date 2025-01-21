@@ -4,9 +4,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-
 import { routes } from './app.routes';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './store/reducers';
 import { provideEffects } from '@ngrx/effects';
 import { provideAnimations } from '@angular/platform-browser/animations';
 

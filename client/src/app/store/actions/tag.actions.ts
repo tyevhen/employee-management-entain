@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Tag, TagCreate } from '../shared/interfaces';
+import { Tag, TagCreate } from '../../shared/interfaces';
 
 export const setTags = createAction(
   '[Tags] Set Tags',
@@ -39,4 +39,3 @@ export const createTagFailure = createAction(
   '[Tags] Add Tag Failure',
   props<{ error: string }>()
 );
-
