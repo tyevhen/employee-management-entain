@@ -1,0 +1,29 @@
+@use "@angular/material" as mat;
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html {
+  height: 100%;
+}
+
+.mat-drawer-content {
+  width: 100%;
+}

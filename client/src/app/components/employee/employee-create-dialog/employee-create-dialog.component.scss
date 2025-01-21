@@ -1,0 +1,11 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  gap: 8px;
+}

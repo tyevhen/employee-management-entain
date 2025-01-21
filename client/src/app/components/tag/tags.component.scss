@@ -1,0 +1,25 @@
+.tags-container {
+  mat-card {
+    width: 100%;
+  }
+
+  .chip-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent chips from wrapping to a new row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 8px; /* Space between chips */
+
+    mat-chip-row {
+      flex-shrink: 0; /* Prevent chips from shrinking */
+    }
+
+    input {
+      flex-shrink: 0; /* Prevent input from shrinking */
+      min-width: 120px; /* Ensure input remains visible */
+    }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+}

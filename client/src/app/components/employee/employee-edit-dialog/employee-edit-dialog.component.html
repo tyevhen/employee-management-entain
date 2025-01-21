@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>Edit Employee</h2>
+<mat-dialog-content>
+  <form
+    [formGroup]="editEmployeeForm"
+    class="form-container"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" />
+      <mat-error
+        *ngIf="
+          editEmployeeForm.get('firstName')?.hasError('required') &&
+          editEmployeeForm.get('firstName')?.touched
+        "
+      >
+        First Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" />
+      <mat-error
+        *ngIf="
+          editEmployeeForm.get('lastName')?.hasError('required') &&
+          editEmployeeForm.get('lastName')?.touched
+        "
+      >
+        FLast Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" />
+      <mat-error
+        *ngIf="
+          editEmployeeForm.get('phone')?.hasError('required') &&
+          editEmployeeForm.get('phone')?.touched
+        "
+      >
+        FLast Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Office</mat-label>
+      <mat-select formControlName="officeId">
+        <mat-option *ngFor="let office of offices" [value]="office.id">
+          {{ office.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tags</mat-label>
+      <mat-select formControlName="tags" multiple>
+        <mat-option *ngFor="let tag of tags" [value]="tag.name">
+          {{ tag.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="buttons-container">
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+</mat-dialog-actions>
