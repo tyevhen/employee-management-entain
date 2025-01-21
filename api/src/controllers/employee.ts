@@ -96,7 +96,7 @@ export const getAllWithPaginationAndSorting = async (
       limit: Number(limit),
       sortBy: sortBy as string,
       order: order as "asc" | "desc",
-    });
+    });    
 
     res.status(200).json(employees);
   } catch (error) {

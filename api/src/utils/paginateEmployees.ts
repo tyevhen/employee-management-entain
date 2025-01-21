@@ -17,6 +17,7 @@ const paginateEmployees = async (pagination: PaginationInput) => {
     skip: (page - 1) * limit,
     take: limit,
     orderBy: sorting,
+    include: { office: true, tags: true },
   });
 
   const totalPages = Math.ceil(total / limit);

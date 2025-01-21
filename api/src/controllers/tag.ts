@@ -3,8 +3,7 @@ import { Prisma } from "@prisma/client";
 import prisma from "../db/client";
 
 export const createTag = async (req: Request, res: Response) => {
-  const { name } = req.body;
-
+  const { name } = req.body;  
   const data: Prisma.TagCreateInput = {
     name,
   };
