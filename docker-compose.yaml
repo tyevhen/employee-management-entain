@@ -33,8 +33,10 @@ services:
   client:
     build:
       context: ./client
+    environment:
+      CLIENT_PORT: ${CLIENT_PORT}
     ports:
-      - "4200:4200"
+      - "${CLIENT_PORT}:${CLIENT_PORT}"
     networks:
       - app-network
 

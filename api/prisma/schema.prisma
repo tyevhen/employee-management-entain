@@ -28,6 +28,8 @@ model Employee {
   updatedAt DateTime? @updatedAt
 
   @@map("employee")
+
+  @@unique([firstName, lastName, birthDate])
 }
 
 model Office {

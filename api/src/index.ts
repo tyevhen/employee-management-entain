@@ -14,7 +14,7 @@ const app = express();
 
 const startServer = async () => {
   try {
-    await runSeed();
+    // await runSeed();
 
     app.use(bodyParser.json());
     app.use("/employees", employeeRouter);
