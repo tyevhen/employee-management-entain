@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import { reducers, metaReducers } from './store/reducers';
 import { provideEffects } from '@ngrx/effects';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(reducers, { metaReducers }),
     provideEffects(),
     provideStoreDevtools(),
+    { provide: 'API_URL', useValue: environment.API_URL },
   ],
 };
