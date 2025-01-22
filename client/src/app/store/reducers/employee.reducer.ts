@@ -7,10 +7,8 @@ import {
   loadEmployeesFailure,
   createEmployeeSuccess,
   createEmployeeFailure,
-  deleteEmployeeFailure,
   updateEmployeeSuccess,
   updateEmployeeFailure,
-  deleteEmployeeSuccess,
 } from '../actions';
 
 export interface EmployeeState {
@@ -54,11 +52,6 @@ export const employeeReducer = createReducer(
     loading: false,
     error,
   })),
-  on(deleteEmployeeFailure, (state, { error }) => ({
-    ...state,
-    loading: false,
-    error,
-  })),
   on(updateEmployeeSuccess, (state, { employee }) => ({
     ...state,
     loading: false,
@@ -69,16 +62,6 @@ export const employeeReducer = createReducer(
     ),
   })),
   on(updateEmployeeFailure, (state, { error }) => ({
-    ...state,
-    loading: false,
-    error,
-  })),
-  on(deleteEmployeeSuccess, (state, { id }) => ({
-    ...state,
-    loading: false,
-    employees: state.employees.filter((employee) => employee.id !== id),
-  })),
-  on(deleteEmployeeFailure, (state, { error }) => ({
     ...state,
     loading: false,
     error,

@@ -35,18 +35,3 @@ export const updateEmployeeFailure = createAction(
   '[Employee] Update Employee failure',
   props<{ error: string }>()
 );
-
-export const deleteEmployee = createAction(
-  '[Employee] Delete Employee',
-  props<{ id: string }>()
-);
-
-export const deleteEmployeeSuccess = createAction(
-  '[Employee] Delete Employee Success',
-  props<{ id: string }>()
-);
-
-export const deleteEmployeeFailure = createAction(
-  '[Employee] Delete Employee Failure',
-  props<{ error: string }>()
-);
